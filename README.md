@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Organigrama app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projecto para curso allura Oracle
 
 ## Available Scripts
 
