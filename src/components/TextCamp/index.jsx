@@ -6,7 +6,7 @@ const TextCamp = (props) => {
   return (
     <div className="text-camp">
       <label>{props.titulo}</label>
-      <input placeholder={placeholderModificado}></input>
+      <input placeholder={placeholderModificado} required={props.required} />
     </div>
   );
 };
