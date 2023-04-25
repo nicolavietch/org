@@ -1,7 +1,7 @@
 import React from "react";
 import "./ListaOpciones.css";
 
-const ListaOpciones = () => {
+const ListaOpciones = (props) => {
   const equipos = [
     "Programación",
     "Front End",
@@ -11,12 +11,22 @@ const ListaOpciones = () => {
     "Móvil",
     "Innovación y Gestión",
   ];
+
+  const handleChange = (e) => {
+    props.actualizarEquipo(e.target.value);
+  };
+
   return (
     <div className="lista-opciones">
-      <label htmlFor="">Equipos</label>
-      <select>
+      <label htmlFor="">Equipos/</label>
+      <select value={props.valor} onChange={handleChange}>
+        <option value="" disabled defaultValue="" hidden>
+          Seleccionar Equipo
+        </option>
         {equipos.map((equipo, index) => (
-          <option key={index}>{equipo}</option>
+          <option key={index} value={equipo}>
+            {equipo}
+          </option>
         ))}
       </select>
     </div>
