@@ -4,7 +4,7 @@ import TextCamp from "../TextCamp";
 import ListaOpciones from "../ListaOpciones";
 import Boton from "../Boton";
 
-const Formulario = () => {
+const Formulario = (props) => {
   const [nombre, setNombre] = useState("");
   const [puesto, setPuesto] = useState("");
   const [foto, setFoto] = useState("");
@@ -46,7 +46,11 @@ const Formulario = () => {
           valor={foto}
           actualizarValor={setFoto}
         />
-        <ListaOpciones valor={equipo} actualizarEquipo={setEquipo} />
+        <ListaOpciones
+          valor={equipo}
+          actualizarEquipo={setEquipo}
+          equipos={props.equipos}
+        />
         <Boton>Crear</Boton>
       </form>
     </section>
