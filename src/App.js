@@ -7,9 +7,18 @@ import Equipo from "./components/Equipo";
 
 function App() {
   const [show, setShow] = useState(false);
+  const [colaboradores, setColaboradores] = useState([]);
 
   const handleClick = () => {
     setShow((prev) => !prev);
+  };
+
+  //Registrar colaborador
+
+  const registrarColaborador = (colaborador) => {
+    console.log("Nuevo colaborador", colaborador);
+    //Spread operator
+    setColaboradores([...colaboradores, colaborador]);
   };
 
   //Lista de equipos
@@ -54,7 +63,12 @@ function App() {
   return (
     <div>
       <Header />
-      {show && <Formulario equipos={equipos.map((equipo) => equipo.titulo)} />}
+      {show && (
+        <Formulario
+          equipos={equipos.map((equipo) => equipo.titulo)}
+          registrarColaborador={registrarColaborador}
+        />
+      )}
       <MiOrg handleClick={handleClick} />
       {equipos.map((equipo) => (
         <Equipo key={equipo.titulo} datos={equipo} />
